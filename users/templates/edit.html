@@ -1,0 +1,51 @@
+<html>
+ 
+<head>
+    <title>hitek</title>
+    <style>
+        .container {
+            margin-left: 550px;
+            margin-top: 150px;
+            width: 300px;
+            height: 100px;
+            padding: 15px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+ 
+<body>
+    <h1></h1>
+    <p style="margin-left:550px;"><a href="retrieve"></a></p>
+    <div class="container">
+        <table>
+            <tbody>
+                <form action="/update/{{object.pk}}" method="POST">
+                    {% csrf_token %}
+                    <tr>
+                        <td> Name</td>
+                        <td><input type="text" name="name" value={{object.name}}></td>
+                    </tr>
+                    <tr>
+                        <td> Group</td>
+                        <td><input type="text" name="group" value={{object.group}}></td>
+                    </tr>
+                    <tr>
+                        <td> Address</td>
+                        <td><textarea name='address'>{{object.address}}</textarea></td>
+                    </tr>
+                    <tr>
+                        <td> Country</td>
+                        <td><textarea name='country'>{{object.country}}</textarea></td>
+                    </tr>
+                    <tr>
+                        <td><button>Submit</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+ 
+</html>
+
